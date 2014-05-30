@@ -1,0 +1,22 @@
+<div class="loading icon" ng-show="!threads || threads.length === 0">
+	<img src="/images/loading.gif" alt="now loading">
+</div>
+<div ng-show="thumbnail !== null" ng-include="'/sp/views/thumbnail.html'"></div>
+<div ng-include="'/sp/views/catalog_reload.html'" class="top"></div>
+<ul class="catalog">
+	<a ng-href="/sp/thread/?server={{server}}&id={{thread.url}}" ng-click="open($event, thread)" ng-repeat="thread in threads | tableToArray">
+		<li ng-class="{read:history[thread.url]}">
+			<div class="thumbnail">
+				<img ng-src="{{thread.img}}" ng-click="showThumbnail($event, thread.img)">
+			</div>
+			<div class="info">
+				<div ng-bind-html="thread.text"></div>
+				<span>{{thread.res}}</span>
+			</div>
+			<div class="option" ng-click="showOption($event)">
+				*
+			</div>
+		</li>
+	</a>
+</ul>
+<div ng-include="'/sp/views/catalog_reload.html'" class="bottom"></div>

@@ -1,0 +1,19 @@
+<div class="loading icon" ng-show="!responses || responses.length === 0">
+	<img src="/images/loading.gif" alt="now loading">
+</div>
+<div ng-repeat="response in responses" class="response">
+	<div>{{response.date}}</div>
+	<div>No.{{response.no}}</div>
+	<div ng-if="response.img">画像ファイル名:{{response.img | filename}}</div>
+	<div ng-if="response.mail != null">[{{response.mail}}]</div>
+	<div ng-if="response.id != null">ID:{{response.id}}</div>
+	<div ng-if="response.soudane > 0">そうだねx{{response.soudane}}</div>
+	<a ng-href="{{response.img}}" target="_blank" ng-if="response.img != null">
+		<img ng-src="{{response.img | thumbnailUrl}}">
+	</a>
+	<div ng-bind-html="response.text | autolink"></div>
+</div>
+<div class="reload">
+	[<a href="" ng-click="reload($event)">リロード</a>]
+	<span ng-show="isLoading">更新中...</span>
+</div>

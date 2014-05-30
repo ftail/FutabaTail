@@ -1,0 +1,17 @@
+.response{
+	background: #F0E0D6;
+	margin: 10px;
+	word-break: break-all;
+}
+
+
+img.thumbnail{
+	display: inline-block;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.reload{
+	margin: 10px;
+	margin-bottom: 50px;
+}

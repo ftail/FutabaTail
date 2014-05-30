@@ -1,0 +1,15 @@
+{
+  "name": "FutabaTail",
+  "version": "0.0.1",
+  "description": "Futaba Proxy for all device",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.16.0",
+    "express": "3.3.4",
+    "iconv": "^2.1.0",
+    "request": "^2.36.0"
+  },
+  "author": "inko"
+}

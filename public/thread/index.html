@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja" ng-app="ftail">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="/javascripts/angular.min.js"></script>
+		<script src="/javascripts/angular-resource.min.js"></script>
+		<script src="/javascripts/angular-cookies.min.js"></script>
+		<script src="/javascripts/angular-sanitize.min.js"></script>
+		<script>
+
+			var app = angular.module('ftail', ['ngResource', 'ngCookies', 'ngSanitize']);
+			app.config(function($locationProvider){
+				$locationProvider.html5Mode(true).hashPrefix('!');
+			});
+			app.controller('ThreadCtrl', function($scope, $resource, $location, $cookies){
+				var query = $location.search();
+				if(query.server && query.id){
+					var url = '/api/thread?server='+query.server + '&id='+query.id;
+					$scope.threads = $resource(url).query();
+				}
+			});
+		</script>
+		<style>
+			.c div{
+				display: inline-block;
+				background-color: #F0E0D6;
+				margin: 10px 0;
+			}
+			body{
+				background-image: url(/images/imageUnityGirl.png);
+				background-position: 100% 100%;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-color: #FFFFEE;
+			}
+		</style>
+	</head>
+	<body ng-controller="ThreadCtrl">
+		<div ng-repeat="thread in threads" class="c">
+			<div  ng-bind-html="thread.text" ></div>
+		</div>
+	</body>
+</html>

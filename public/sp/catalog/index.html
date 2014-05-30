@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja" ng-app="ftail">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex, nofollow">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes" />
+		<title>FutabaTail</title>
+		<script src="/javascripts/angular.min.js"></script>
+		<script src="/javascripts/angular-resource.min.js"></script>
+		<script src="/javascripts/angular-cookies.min.js"></script>
+		<script src="/javascripts/angular-sanitize.min.js"></script>
+		
+		<!-- メインモジュール -->
+		<script src="/sp/scripts/app.js"></script>
+		
+		<!-- コントローラ -->
+		<script src="/sp/scripts/controllers/catalog.js"></script>
+		<script src="/sp/scripts/controllers/thread.js"></script>
+
+		<!-- フィルタ -->
+		<script src="/sp/scripts/filters/tableToArray.js"></script>
+		
+		
+		<link rel="stylesheet" href="/sp/styles/main.css">
+		<link rel="stylesheet" href="/sp/styles/catalog.css">
+		
+	</head>
+	<body>
+		<div ng-include="'/sp/views/catalog.html'" ng-controller="CatalogCtrl"></div>
+	</body>
+</html>
