@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja" ng-app="ftail">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex, nofollow">
+		
+		<title>FutabaTail</title>
+		<!--
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="/javascripts/angular.min.js"></script>
+		<script>
+			angular.module('ftail', [])
+			.config(function($locationProvider){
+				/*
+	$routeProvider.when('/sp/thread/',{
+		templateUrl: '/sp/views/thread.html',
+		controller: 'ThreadCtrl'
+	});
+	$routeProvider.when('/sp/catalog/',{
+		templateUrl: '/sp/views/catalog.html',
+		controller: 'CatalogCtrl'
+	});*/
+				$locationProvider.html5Mode(false).hashPrefix('!');
+			});
+			function MainCtrl($scope, $location){
+				$scope.test= function(e){
+					e.preventDefault();
+					$location.path('/hoge');
+				}
+			}
+		</script>
+		-->
+	</head>
+	<body ng-controller="MainCtrl">
+		<p><a href="/sp/catalog/?server=img">img ...</a></p>
+		<p><a href="/sp/catalog/?server=may">may ...</a></p>
+	</body>
+</html>
